@@ -21,6 +21,7 @@ async function fetchTodos() {
   const resp = await response.json();
   return resp;
 }
+
 function formatApiResponse(data) {
   return data.reduce((acc, element) => {
     const userId = element.userId;
@@ -29,6 +30,7 @@ function formatApiResponse(data) {
     return acc;
   }, {});
 }
+
 function createBlock(d, key) {
   const block = document.createElement("div");
   block.className = "block";
