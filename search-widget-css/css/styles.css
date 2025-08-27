@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  place-items: start;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer {
+  border-top: 1px solid #eee;
+  width: 100%;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.side-nav {
+  border-right: 1px solid #ddd;
+}
+.main-content {
+}
+.right-side {
+  border-left: 1px solid #ddd;
+}

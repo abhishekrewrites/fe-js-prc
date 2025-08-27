@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.list-item {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+}
