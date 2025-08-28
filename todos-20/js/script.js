@@ -1,6 +1,7 @@
 const LIMIT = 20;
 const TOTAL_LIMIT = 100;
 let skip = 0;
+let updatedData = [];
 
 const elements = {
   total: null,
@@ -55,12 +56,18 @@ function createTodoItem(todoData) {
   }
 
   checkbox.addEventListener("change", function () {
-    if (this.checked) {
+    const isChecked = this.checked;
+    if (isChecked) {
       todoText.style.textDecoration = "line-through";
       todoText.style.opacity = "0.6";
     } else {
       todoText.style.textDecoration = "none";
       todoText.style.opacity = "1";
+    }
+
+    const index = updatedData.findIndex((todo) => todo.id === todoData.id);
+    if (index > -1) {
+      updatedData[index].completed = isChecked;
     }
   });
 
@@ -90,6 +97,8 @@ async function renderUI() {
 
   const data = await fetchTodos();
   const todos = data.todos;
+
+  updatedData = [...updatedData, ...todos];
 
   const newTotal = updateTotal(todos.length);
 
